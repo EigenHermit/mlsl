@@ -63,8 +63,12 @@ The Gaussian white noise is added since we think there maybe some photos that ha
 For the real galaxies from HST, we add them because that we think some galaxies that have irregular shape maybe mistake for lensd galaxies. These ten galaxies are selected because their relatively abnormal shape. On the premise that integrity of shapes of galaxies is guaranteed, the images of real galaxies have been tailored randomly to increase the size of the set. Also we rotate the images by 0, 90 180, 270 dgrees randomly. After tailoring and rotating, we lower down the resolution to make sure they have the same resolution with our positvie samples.
 As for unlensed Sersic galaxies, serveal galaxies were plotted instead of one. Since we want to the Network can distinguish multiply images and two normal galaxies in one image. And the number of Sersic galaxies is randomly distributed from one to three. We also sheared the image of galaxies to simulate the elliptical galaxies. 
 \section{Network}
+We use the simple Network for now, which is the network used by MINST dataset. In the futher, we will change it to the network designed by ourselves.
 \section{Results}
-For testing our network, we generate xxx png files for positive samples and xxx png files for negative samples, the total number of png files are xxx. Additionally, we equaled the size of negative samples and positive samples, by removing the extra samples randomly. For spliting training and test set, we set the ratio of test set to 1/3 and the ratio of training set to 2/3(that means the size of test set is xxx and the size of training set is xxx) and we splited the images randomly. The accuracy and ROC curve are recorded at figure6.
+For testing our network, we generate 47,409 png files for positive samples and 69,999 png files for negative samples. Additionally, we equaled the size of negative samples and positive samples, by removing the extra samples randomly. For spliting training and test set, we set the ratio of test set to 1/3 and the ratio of training set to 2/3(that means the size of test set is 31,606 and the size of training set is 63,212) and we splited the images randomly. The accuracy and ROC curve are recorded at figure6. The accuracy is defined as, in our situation, the fraction of number of true lenses classified as lenses to total number of true lenses that classified by network, or
+\begin{equation}
+	accuracy = \frac{TP}{TP + FP}
+\end{equation}
 \section{Conclusion}
 
 \begin{table}
@@ -135,6 +139,15 @@ For testing our network, we generate xxx png files for positive samples and xxx 
   \includegraphics[scale=0.4]{p12.png}
 
   \caption{Some exmpales of positive samples.}
+\label{ps}
+\end{figure}
+
+\begin{figure}
+
+  \includegraphics[scale=0.6]{2018-06-12-10:15.jpg}
+
+
+  \caption{Testing Results.}
 \label{ps}
 \end{figure}
 \end{document}
